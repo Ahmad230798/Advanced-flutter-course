@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:tasks/main.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tasks/core/routing/app_route.dart';
+import 'package:tasks/core/routing/routes.dart';
+import 'package:tasks/core/theming/app_colors.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AppRoute appRoute;
+  const MyApp({super.key, required this.appRoute});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Advanced Flutter course',
-      debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Advanced Flutter course'),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: AppColors.mainBlue,
+          scaffoldBackgroundColor: Colors.white,
+          
+        ),
+        initialRoute: Routes.onBoardingScreen,
+        onGenerateRoute: appRoute.generateRoute,
+      ),
     );
   }
 }

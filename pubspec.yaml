@@ -55,7 +55,8 @@ dependencies:
   #for splash screen
   flutter_native_splash: ^2.4.7
   flutter_svg: ^2.2.3
-  #for local database
+  #An SVG rendering and widget library for Flutter, which allows painting
+  flutter_screenutil: ^5.9.3
 
 
 dev_dependencies:
