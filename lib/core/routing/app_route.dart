@@ -5,6 +5,7 @@ import 'package:tasks/features/onboarding/on_boarding_screen.dart';
 
 class AppRoute {
   Route generateRoute(RouteSettings settings) {
+    final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => const OnBoardingScreen());
